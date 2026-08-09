@@ -35,12 +35,7 @@ export default function StatCard({ icon: Icon, label, value, tone = "indigo", su
           </p>
         </div>
         {Icon && (
-          <div
-            className={classNames(
-              "flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.05] transition-colors duration-300 group-hover:bg-accent-blue group-hover:text-white",
-              toneMap[tone].split(" ").pop()
-            )}
-          >
+          <div className={classNames("flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.05]", toneMap[tone].split(" ").pop())}>
             <Icon size={18} />
           </div>
         )}

@@ -37,7 +37,7 @@ function SidebarContent({ onNavigate }) {
             end={item.end}
             onClick={onNavigate}
             className={({ isActive }) =>
-              `flex items-center gap-2.5 rounded-xl px-2.5 py-2.5 text-[11px] font-semibold transition-colors ${
+              `flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-[11px] font-medium transition-colors ${
                 isActive
                   ? "bg-accent-indigo/15 text-white shadow-[inset_0_0_0_1px_rgba(99,102,241,0.35)]"
                   : "text-white/55 hover:bg-white/[0.05] hover:text-white"
@@ -70,7 +70,7 @@ export default function AdminLayout() {
   return (
     <div className="min-h-screen bg-base lg:flex">
       {/* Desktop sidebar */}
-      <aside className="sticky top-0 hidden h-screen w-[228px] flex-shrink-0 border-r border-white/[0.06] bg-surface/40 px-1 py-1 lg:block">
+      <aside className="sticky top-0 hidden h-screen w-[208px] flex-shrink-0 border-r border-white/[0.06] bg-surface/40 lg:block">
         <SidebarContent />
       </aside>
 
