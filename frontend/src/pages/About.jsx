@@ -1,0 +1,6 @@
+import { Link } from "react-router-dom";
+import { ArrowRight, BrainCircuit, MapPinned, UsersRound, ShieldCheck } from "lucide-react";
+
+export default function About() {
+  return <main className="simple-page"><section className="simple-hero"><span className="section-eyebrow">About Civi-X</span><h1>Built around the <span>citizen.</span></h1><p>Civi-X connects citizens and civic teams through one clear, intelligent experience — report problems, track progress, discover patterns and talk to the people handling your issue.</p></section><div className="simple-grid">{[[BrainCircuit,"AI-assisted triage","Reports are organized and prioritized so teams can act faster."],[MapPinned,"Location-aware civic intelligence","Issues are mapped and grouped to reveal recurring problems."],[UsersRound,"Human support","When citizens need a person, the helpline connects them directly to the team."],[ShieldCheck,"Transparent updates","Complaint timelines keep citizens informed from report to resolution."]].map(([Icon,title,desc])=><article className="simple-card" key={title}><span><Icon size={20}/></span><h3>{title}</h3><p>{desc}</p></article>)}</div><Link to="/helpline" className="btn-primary mx-auto mt-10">Talk to the helpline <ArrowRight size={16}/></Link></main>;
+}
