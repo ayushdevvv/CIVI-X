@@ -215,12 +215,12 @@ export default function Landing() {
               whileInView="show"
               viewport={{ once: true, margin: "-40px" }}
               variants={fadeUp}
-              className="card-base group relative overflow-hidden p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent-indigo/30"
+              className="card-base group relative overflow-hidden p-6 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="pointer-events-none absolute inset-0 bg-card-sheen opacity-0 transition-opacity group-hover:opacity-100" />
               <div className="relative">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-indigo/15 text-accent-indigo">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-indigo/10 text-accent-indigo transition-colors duration-300 group-hover:bg-accent-indigo group-hover:text-white">
                     <step.icon size={18} />
                   </span>
                   <span className="text-xs font-bold text-white/25">0{i + 1}</span>
@@ -258,9 +258,9 @@ export default function Landing() {
                 whileInView="show"
                 viewport={{ once: true, margin: "-40px" }}
                 variants={fadeUp}
-                className="card-base flex flex-col items-center gap-3 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-accent-indigo/30"
+                className="card-base group flex flex-col items-center gap-3 p-6 text-center transition-all duration-300 hover:-translate-y-1"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-indigo/10 text-accent-indigo">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-indigo/10 text-accent-indigo transition-colors duration-300 group-hover:bg-accent-indigo group-hover:text-white">
                   <cat.icon size={20} />
                 </span>
                 <p className="text-sm font-semibold text-white">{cat.name}</p>

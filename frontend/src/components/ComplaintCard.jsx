@@ -13,7 +13,7 @@ export default function ComplaintCard({ complaint, index = 0 }) {
     >
       <Link
         to={`/track/${complaint.complaintId}`}
-        className="card-base group flex h-full flex-col p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent-indigo/30 hover:shadow-glow-sm"
+        className="card-base group flex h-full flex-col p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-sm"
       >
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">

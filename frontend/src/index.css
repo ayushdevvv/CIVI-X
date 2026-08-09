@@ -62,7 +62,7 @@
   }
 
   .card-base {
-    @apply relative rounded-2xl border border-surface-border bg-surface/70 shadow-card;
+    @apply relative rounded-3xl border border-white/5 bg-surface/70 shadow-card;
   }
 
   .btn-primary {
@@ -118,8 +118,8 @@
 
 /* Civi-X premium hybrid layer */
 body{background:#05070b}
-.card-base{background:linear-gradient(145deg,rgba(11,16,24,.98),rgba(7,10,15,.98));border-color:rgba(255,255,255,.075);box-shadow:0 18px 55px rgba(0,0,0,.16)}
-.card-base:hover{border-color:rgba(122,145,255,.18)}
+.card-base{background:#0d0f12;border-color:rgba(255,255,255,.05);box-shadow:0 18px 55px rgba(0,0,0,.16);transition:border-color .3s ease,transform .3s ease}
+.card-base:hover{border-color:rgba(59,130,246,.5)}
 .section-eyebrow{letter-spacing:.13em;font-size:9px}
 .btn-primary,.btn-secondary{transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
 .btn-primary:hover,.btn-secondary:hover{transform:translateY(-1px)}
@@ -133,8 +133,6 @@ body{background:#05070b}
 /* Civi-X public experience: premium, compact, responsive */
 .hero h1{max-width:900px;letter-spacing:-.075em}
 .hero-copy{font-size:15px;line-height:1.75;color:rgba(255,255,255,.52)}
-.card-base{background:linear-gradient(145deg,rgba(11,16,24,.98),rgba(7,10,15,.98));border-color:rgba(255,255,255,.075);box-shadow:0 18px 55px rgba(0,0,0,.16)}
-.card-base:hover{border-color:rgba(122,145,255,.18)}
 .report-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;overflow:hidden;border:1px solid rgba(255,255,255,.07);border-radius:14px;background:rgba(255,255,255,.06)}
 .report-trust>div{display:grid;gap:4px;background:#090e15;padding:12px 14px}
 .report-trust b{font-size:10px;color:rgba(255,255,255,.8)}
