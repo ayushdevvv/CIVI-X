@@ -91,7 +91,7 @@ export default function Landing() {
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             className="mx-auto flex max-w-5xl flex-col items-center text-center"
           >
-            <h1 className="civi-hero-title text-4xl font-extrabold leading-[1.04] tracking-[-0.055em] text-white sm:text-5xl lg:text-[72px]">
+            <h1 className="civi-hero-title text-4xl font-extrabold leading-[1.04] tracking-[-0.055em] text-white sm:text-6xl lg:text-[72px]">
               Civic problems, solved with
               <span className="block bg-gradient-to-r from-accent-indigo via-accent-blue to-accent-cyan bg-clip-text text-transparent">
                 machine intelligence.
