@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import IssueMap from "../components/IssueMap";
 import {
   ArrowRight,
-  MapPin,
   Users,
   BarChart3,
   Zap,
@@ -19,7 +18,6 @@ import {
   Building2,
   MegaphoneOff,
   CircleDot,
-  Headset,
 } from "lucide-react";
 import StatCard from "../components/StatCard";
 
@@ -80,98 +78,38 @@ export default function Landing() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-hero-radial">
+      <section className="civi-hero relative overflow-hidden bg-hero-radial">
         <div className="pointer-events-none absolute inset-0 bg-grid-fade" />
         <div
-          className="pointer-events-none absolute -top-24 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-accent-indigo/10 blur-[120px]"
+          className="pointer-events-none absolute -top-24 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-accent-indigo/10 blur-[120px]"
           aria-hidden
         />
-        <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:pt-28">
+        <div className="relative mx-auto flex min-h-[500px] max-w-7xl items-start justify-center px-5 pt-16 pb-20 sm:px-8 sm:pt-20 sm:pb-24 lg:min-h-[535px] lg:pt-14">
           <motion.div
-            initial="hidden"
-            animate="show"
-            variants={fadeUp}
-            className="mx-auto flex max-w-3xl flex-col items-center text-center"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            className="mx-auto flex max-w-5xl flex-col items-center text-center"
           >
-            <span className="section-eyebrow">AI-Powered Civic Intelligence</span>
-
-            <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-6xl">
-              Civic problems, solved with{" "}
-              <span className="bg-gradient-to-r from-accent-indigo via-accent-blue to-accent-cyan bg-clip-text text-transparent">
+            <h1 className="civi-hero-title text-4xl font-extrabold leading-[1.04] tracking-[-0.055em] text-white sm:text-5xl lg:text-[72px]">
+              Civic problems, solved with
+              <span className="block bg-gradient-to-r from-accent-indigo via-accent-blue to-accent-cyan bg-clip-text text-transparent">
                 machine intelligence.
               </span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/50 sm:text-lg">
-              Civi-X turns scattered pothole, streetlight and drainage complaints into a
-              prioritized, department-routed action plan — automatically detecting recurring
-              issue clusters before they become citywide problems.
-            </p>
-
-            <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
-              <Link to="/report" className="btn-primary landing-cta landing-action-primary w-full px-7 py-3.5 text-base sm:w-auto">
-                <ClipboardCheck size={17} />
-                Report an Issue
-                <ArrowRight size={15} />
+            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent("civi:get-started"))}
+                className="civi-hero-primary"
+              >
+                Get Started
+                <ArrowRight size={17} />
+              </button>
+              <Link to="/report" className="civi-hero-secondary">
+                Report Issue
               </Link>
-              <Link to="/track" className="btn-secondary landing-cta-secondary landing-action-secondary w-full px-7 py-3.5 text-base sm:w-auto">
-                <MapPin size={16} />
-                Track Complaint
-              </Link>
-              <Link to="/helpline" className="landing-action-quiet w-full sm:w-auto">
-                <Headset size={15} />
-                Talk to Helpline
-              </Link>
-            </div>
-
-            <div className="landing-signal-row mt-8">
-              <div><span className="signal-dot live"></span><b>2,481</b><small>reports analyzed</small></div>
-              <div><b>37</b><small>recurring clusters</small></div>
-              <div><b>86.4%</b><small>resolution rate</small></div>
-            </div>
-
-          </motion.div>
-
-          {/* Hero visual — floating priority card */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto mt-16 max-w-3xl"
-          >
-            <div className="glass-panel animate-float p-5 sm:p-6">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-severity-high/15 text-severity-high">
-                    <Lightbulb size={20} />
-                  </span>
-                  <div>
-                    <p className="text-sm font-bold text-white">Streetlight Failure Cluster</p>
-                    <p className="text-xs text-white/40">Hazratganj Corridor, Lucknow</p>
-                  </div>
-                </div>
-                <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-severity-high/30 bg-severity-high/10 px-3 py-1 text-xs font-semibold text-severity-high">
-                  High Priority
-                </span>
-              </div>
-              <div className="mt-4 grid grid-cols-3 gap-3 border-t border-white/[0.06] pt-4 text-center sm:text-left">
-                <div>
-                  <p className="text-lg font-extrabold text-white">23</p>
-                  <p className="text-[11px] text-white/40">Reports</p>
-                </div>
-                <div>
-                  <p className="text-lg font-extrabold text-white">4</p>
-                  <p className="text-[11px] text-white/40">Locations</p>
-                </div>
-                <div>
-                  <p className="text-lg font-extrabold text-white">87</p>
-                  <p className="text-[11px] text-white/40">Avg. Priority</p>
-                </div>
-              </div>
-              <p className="mt-4 rounded-xl bg-white/[0.03] p-3 text-xs leading-relaxed text-white/45">
-                Multiple complaints describe a recurring lighting problem across the same
-                corridor — recommending a consolidated repair crew dispatch.
-              </p>
             </div>
           </motion.div>
         </div>

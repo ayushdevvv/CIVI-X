@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, useOutletContext } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -6,6 +6,12 @@ import GetStartedModal from "./GetStartedModal";
 
 export default function PublicLayout() {
   const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    const open = () => setModalOpen(true);
+    window.addEventListener("civi:get-started", open);
+    return () => window.removeEventListener("civi:get-started", open);
+  }, []);
 
   return (
     <div className="flex min-h-screen flex-col">

@@ -176,10 +176,6 @@ export default function ReportIssue() {
               Add the essentials once. Civi-X will score the issue, find related reports and recommend the right department.
             </p>
 
-            <div className="report-intro-card"><div><span>01</span><b>Describe the issue</b><small>What happened and where?</small></div><div><span>02</span><b>Pin the location</b><small>Help the right team find it.</small></div><div><span>03</span><b>Get a tracked ID</b><small>Follow progress after submission.</small></div></div>
-
-            <div className="report-trust"><div><b>Fast triage</b><span>Usually analyzed in seconds</span></div><div><b>Location aware</b><span>Routes issues to the right team</span></div><div><b>Trackable</b><span>Every report gets a unique ID</span></div></div>
-
             <form onSubmit={handleSubmit} className="card-base report-form mt-4 space-y-5 p-4 sm:p-6">
               <div>
                 <label className="label-base">Issue title</label>

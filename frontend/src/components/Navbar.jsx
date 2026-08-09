@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Headset, Plus, Shield, ArrowUpRight } from "lucide-react";
+import { Menu, X, Headset, Shield, ArrowUpRight } from "lucide-react";
 import CiviLogo from "./CiviLogo";
 
 const LINKS = [
@@ -31,14 +31,14 @@ export default function Navbar({ onGetStarted }) {
         </nav>
 
         <div className="public-navbar-actions">
+          <Link to="/admin" className="public-admin-nav">
+            <Shield size={15} />
+            <span>Admin Workspace</span>
+          </Link>
           <Link to="/helpline" className="public-helpline-nav">
             <Headset size={15} />
-            <span>Talk to Helpline</span>
+            <span>Helpline</span>
           </Link>
-          <button onClick={onGetStarted} className="public-nav-report">
-            <Plus size={15} />
-            <span>Report Issue</span>
-          </button>
           <button className="public-mobile-toggle" onClick={() => setOpen((v) => !v)} aria-label="Open menu">
             {open ? <X size={19} /> : <Menu size={19} />}
           </button>
@@ -60,9 +60,6 @@ export default function Navbar({ onGetStarted }) {
                   <Link key={link.to} to={link.to} onClick={() => setOpen(false)}>{link.label}<ArrowUpRight size={15} /></Link>
                 ))}
                 <Link to="/helpline" onClick={() => setOpen(false)} className="public-mobile-helpline"><Headset size={16} /> Talk to Helpline</Link>
-                <button onClick={() => { setOpen(false); onGetStarted(); }} className="public-report-button"><Plus size={15} /> Report an issue</button>
-              </div>
-              <div className="mt-auto">
                 <Link to="/admin" onClick={() => setOpen(false)} className="public-admin-link"><Shield size={14} /> Admin workspace</Link>
               </div>
             </motion.aside>
